@@ -20,7 +20,7 @@
        <nav>
         <ul class="menu">
          <li><a class="menu2" href="#inicio">Inicio</a></li>
-         <li><a class="menu2" href="#sobre-mim">Como Jogar</a></li>
+         <li><a class="menu2" onclick="popupOpen('show')" href="#como-jogar">Como Jogar</a></li>
          <li><a class="menu2" href="#projetos">Projetos</a></li>
          <li><a class="menu2" href="#habilidades">Habilidades</a></li> 
         </ul>
@@ -46,20 +46,29 @@
         <div id="resultado">Empate</div>
        <canvas class="canvas"></canvas>
     </div>
-    <div>
-    <form>
-        <input class="reset" type="image" src="assets/img/reset.png" alt="Submit">
-    </form>
-   </div>
   </div>
+<div id="show" style="display: none;" class="popup-wrapper">
+ <div class="popup">
+  <div class="popup-close">x</div><br/>
+    <div class="pop-content">
+        <h2>Pop Deselegante</h2>
+        <br/>
+        <p>O Autor foi o programador LF</p>
+        <br/>
+        <a class="popup-link" href="#">Saiba mais</a>
+    </div>
+ </div>
+</div>
+<div class="container-one">
 <section class="section-one">
 <ul>
     <li>Ola</li>
-    <li></li>
+    <button id="btn">Cliqueme</button>
     <li></li>
     <li></li>
 </ul>
 </section>
+</div>
  </body>
 </html>
 
