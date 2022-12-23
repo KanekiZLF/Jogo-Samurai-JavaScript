@@ -36,7 +36,8 @@ quemVenceu({player, enemy, timerId})
 // Desativa as teclas "Espaço, Seta pra Cima, Seta pra Baixo"
 
 window.onkeydown = function (e) {
-    if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 32) {
+    const codes = [40,38,32];
+    if(codes.includes(e.keyCode)) {
     e.keyCode = 0;
     e.returnValue = false;
     return false;

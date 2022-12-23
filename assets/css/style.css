@@ -3,8 +3,6 @@
     margin: 0;
     list-style: none;
     box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: 'Press Start 2P', cursive;
 }
 .canvas {
     width: 100%;
@@ -25,7 +23,8 @@
     align-items: center;
     justify-content: center;
     color: white;
-    border: 4px solid white
+    border: 4px solid white;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .life {
@@ -82,6 +81,7 @@
     right: 0;
     left: 0;
     display: none;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .reset {
@@ -140,6 +140,55 @@
 
 /* Fim do Menu */
 
+/* Inicio Sectio One */
+
 .section-one {
     width: 200px;
 }
+
+.container-one {
+    width: 100px;
+    display: flex;
+}
+
+/* Fim Section One */
+
+/* Inicio do Pop-Up */
+
+.popup-wrapper {
+    display: none;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.popup {
+    font-family: Arial;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 10% auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+}
+
+.popup a {
+    color: white;
+    cursor: pointer;
+    padding: 6px 10px;
+    text-decoration: none;
+    background: crimson;
+}
+
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Fim do Pop-Up */

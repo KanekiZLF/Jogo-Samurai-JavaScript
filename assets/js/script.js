@@ -368,3 +368,23 @@ window.addEventListener('keyup',(event) => {
         break
     }
 })
+
+const popup = document.querySelector('.popup-wrapper')
+
+popup.addEventListener('click', event => {
+    const classNameOfClikedElement = event.target.classList[0]
+    console.log(classNameOfClikedElement)
+    popup.style.display = 'none'
+})
+
+function popupOpen(el) {
+    var display = document.getElementById(el).style.display;
+
+    if(display === "none") {
+        document.getElementById(el).style.display = 'block';
+    }
+    else {
+        document.getElementById(el).style.display = 'none';
+    }
+}
+

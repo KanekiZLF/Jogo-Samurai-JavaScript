@@ -229,3 +229,4 @@ class Lutador extends Sprite {
 
     }
 }
+
