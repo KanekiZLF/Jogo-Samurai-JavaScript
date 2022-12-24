@@ -154,6 +154,33 @@
 /* Fim Section One */
 
 /* Inicio do Pop-Up */
+.container-inst {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.p1 {
+    display: flex;
+    width: 260px;
+    justify-content: center;
+}
+
+.p2 {
+    display: flex;
+    width: 260px;
+    justify-content: center;
+}
+
+pre {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
 
 .popup-wrapper {
     display: none;
@@ -169,7 +196,7 @@
     font-family: Arial;
     text-align: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 560px;
     margin: 10% auto;
     padding: 20px;
     background: white;

@@ -20,7 +20,7 @@
        <nav>
         <ul class="menu">
          <li><a class="menu2" href="#inicio">Inicio</a></li>
-         <li><a class="menu2" onclick="popupOpen('show')" href="#como-jogar">Como Jogar</a></li>
+         <li><a class="menu2" id="popupOn" href="#como-jogar">Como Jogar</a></li>
          <li><a class="menu2" href="#projetos">Projetos</a></li>
          <li><a class="menu2" href="#habilidades">Habilidades</a></li> 
         </ul>
@@ -49,12 +49,14 @@
   </div>
 <div id="show" style="display: none;" class="popup-wrapper">
  <div class="popup">
-  <div class="popup-close">x</div><br/>
+  <div class="popup-close">x</div>
     <div class="pop-content">
-        <h2>Pop Deselegante</h2>
-        <br/>
-        <p>O Autor foi o programador LF</p>
-        <br/>
+        <h2>Instruções de Jogo</h2><br/>
+        <pre>Jogador 1 | Jogador 2</pre><br/>
+        <div class="container-inst">
+        <p class="p1">Use as teclas A W D para se movimentar, ESPAÇO para Atacar.</p><br/>
+        <p class="p2">Use as teclas ◀️ 🔼 ▶️ para se movimentar, 🔽 para Atacar.</p><br/>
+        </div><br/>
         <a class="popup-link" href="#">Saiba mais</a>
     </div>
  </div>
