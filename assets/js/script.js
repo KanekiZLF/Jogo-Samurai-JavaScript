@@ -353,20 +353,20 @@ window.addEventListener('keydown',(event) => {
         }
     }
 })
-// Esta função define apenas um pulo
+ // Esta função define apenas um pulo
 
 function jumpOff() {
     enemy.velocity.y = 0
-  }
+}
   
   function jumpOn() {
     enemy.velocity.y = -20
-    setTimeout(jumpOff, 100)
+    setTimeout(jumpOff, 500)
 }
 
 function cancellJump(){
 window.addEventListener('keydown',(event) => {
-    if (enemy.velocity.y === -20){
+    if (enemy.velocity.y >= -20){
     switch (event.key) {
 
     case 'ArrowUp':
@@ -387,7 +387,11 @@ window.addEventListener('keyup',(event) => {
 
     case 'a':
         keys.a.pressed = false
-        break   
+        break  
+    
+    case 'w':
+        keys.a.pressed = false
+        break
     
     //Teclas de mover do segundo jogador
     
@@ -397,6 +401,10 @@ window.addEventListener('keyup',(event) => {
 
     case 'ArrowLeft':
         keys.ArrowLeft.pressed = false
+        break
+
+    case 'ArrowUp':
+        keys.ArrowUp.pressed = false
         break
     }
 })
