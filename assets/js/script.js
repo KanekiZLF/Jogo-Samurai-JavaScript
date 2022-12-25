@@ -353,19 +353,30 @@ window.addEventListener('keydown',(event) => {
         }
     }
 })
+// Esta função define apenas um pulo
+
+function jumpOff() {
+    enemy.velocity.y = 0
+  }
+  
+  function jumpOn() {
+    enemy.velocity.y = -20
+    setTimeout(jumpOff, 100)
+}
 
 function cancellJump(){
-  
 window.addEventListener('keydown',(event) => {
     if (enemy.velocity.y === -20){
     switch (event.key) {
-    
+
     case 'ArrowUp':
-        enemy.velocity.y = 0
+        jumpOn()
         break
         }
     }
-})} setTimeout(cancellJump, 1000*3)
+})}
+
+cancellJump()
 
 window.addEventListener('keyup',(event) => {
     switch (event.key) {
