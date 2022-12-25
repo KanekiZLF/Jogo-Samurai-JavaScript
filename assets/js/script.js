@@ -354,6 +354,18 @@ window.addEventListener('keydown',(event) => {
     }
 })
 
+function cancellJump(){
+  
+window.addEventListener('keydown',(event) => {
+    if (enemy.velocity.y === -20){
+    switch (event.key) {
+    
+    case 'ArrowUp':
+        enemy.velocity.y = 0
+        break
+        }
+    }
+})} setTimeout(cancellJump, 1000*3)
 
 window.addEventListener('keyup',(event) => {
     switch (event.key) {
