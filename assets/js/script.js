@@ -317,7 +317,7 @@ window.addEventListener('keydown',(event) => {
         break
 
     case 'w':
-        player.velocity.y = -20
+        player.velocity.y = 0
         break
         // Tecla de Ataque Primeiro Jogador
     
@@ -342,7 +342,7 @@ window.addEventListener('keydown',(event) => {
         break
 
     case 'ArrowUp':
-        enemy.velocity.y = -20
+        enemy.velocity.y = 0
         break
         
         // Tecla de Ataque do Segundo Jogador
@@ -355,28 +355,39 @@ window.addEventListener('keydown',(event) => {
 })
  // Esta função define apenas um pulo
 
-function jumpOff() {
-    enemy.velocity.y = 0
-}
-  
-  function jumpOn() {
-    enemy.velocity.y = -20
-    setTimeout(jumpOff, 500)
-}
-
-function cancellJump(){
-window.addEventListener('keydown',(event) => {
-    if (enemy.velocity.y >= -20){
-    switch (event.key) {
-
-    case 'ArrowUp':
-        jumpOn()
+var clickOne = false;
+function cancellJump1(){
+ window.addEventListener('keydown',(event) => {
+         if(!clickOne) {
+     switch (event.key) {
+     case 'ArrowUp':
+        enemy.velocity.y = -20 
+        clickOne = true
+        setTimeout(backFalseone, 1000)
         break
-        }
-    }
-})}
+         }
+       }
+ })} function backFalseone(){
+        clickOne = false
+}
+cancellJump1();
 
-cancellJump()
+var clickTwo = false;
+function cancellJump2(){
+ window.addEventListener('keydown',(event) => {
+         if(!clickTwo) {
+     switch (event.key) {
+     case 'w':
+        player.velocity.y = -20  
+        clickTwo = true
+        setTimeout(backFalsetwo, 1000)
+        break
+         }
+       }
+ })} function backFalsetwo(){
+        clickTwo = false
+}
+cancellJump2();
 
 window.addEventListener('keyup',(event) => {
     switch (event.key) {
@@ -389,10 +400,6 @@ window.addEventListener('keyup',(event) => {
         keys.a.pressed = false
         break  
     
-    case 'w':
-        keys.a.pressed = false
-        break
-    
     //Teclas de mover do segundo jogador
     
     case 'ArrowRight':
@@ -403,9 +410,6 @@ window.addEventListener('keyup',(event) => {
         keys.ArrowLeft.pressed = false
         break
 
-    case 'ArrowUp':
-        keys.ArrowUp.pressed = false
-        break
     }
 })
 
