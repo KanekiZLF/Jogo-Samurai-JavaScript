@@ -139,6 +139,10 @@ const player = new Lutador ({
         imageSrc: 'assets/img/kenji/Jump.png',
         framesMax: 2,
     },
+    jump2: {
+        imageSrc: 'assets/img/kenji/Jump2.png',
+        framesMax: 2,
+    },
     fall: {
         imageSrc: 'assets/img/kenji/Fall.png',
         framesMax: 2,
@@ -181,6 +185,9 @@ const player = new Lutador ({
                 pressed: false
             },
             ArrowLeft: {
+                pressed: false
+            },
+            ArrowUp: {
                 pressed: false
             }
         }
@@ -235,14 +242,15 @@ function animate() {
     } else {
         enemy.switchSprite('idle') 
     }
-
         // Função Pular Jogador 2
 
     if(enemy.velocity.y < 0) {
         enemy.switchSprite('jump')
-    } else if (enemy.velocity.y > 0){   
-        enemy.switchSprite('fall')  
+    } 
+    else if (enemy.velocity.y > 0){   
+        enemy.switchSprite('fall')
     }
+    
 
     // Verifica se o Jogador foi atingido, se for, então, define uma animação
 
@@ -342,6 +350,7 @@ window.addEventListener('keydown',(event) => {
         break
 
     case 'ArrowUp':
+        keys.ArrowUp.pressed = true
         enemy.velocity.y = 0
         break
         
@@ -353,41 +362,57 @@ window.addEventListener('keydown',(event) => {
         }
     }
 })
- // Esta função define apenas um pulo
+
+// Define o pulo do Player 1 
 
 var clickOne = false;
+
 function cancellJump1(){
- window.addEventListener('keydown',(event) => {
-         if(!clickOne) {
-     switch (event.key) {
-     case 'ArrowUp':
-        enemy.velocity.y = -20 
+window.addEventListener('keydown',(event) => {
+    if(!player.dead){
+        if(!clickOne) {
+    switch (event.key) {
+    case 'w':
+        player.velocity.y = -20  
         clickOne = true
         setTimeout(backFalseone, 1000)
         break
-         }
-       }
- })} function backFalseone(){
+                }
+            }
+        }
+    }
+    
+)}
+ 
+ function backFalseone(){
         clickOne = false
-}
-cancellJump1();
+}       cancellJump1();
+
+ // Define o pulo do Player 2
 
 var clickTwo = false;
+
 function cancellJump2(){
- window.addEventListener('keydown',(event) => {
-         if(!clickTwo) {
-     switch (event.key) {
-     case 'w':
-        player.velocity.y = -20  
+window.addEventListener('keydown',(event) => {
+    if(!enemy.dead){ 
+        if(!clickTwo) {
+    switch (event.key) {
+    case 'ArrowUp':
+        enemy.velocity.y = -20
         clickTwo = true
         setTimeout(backFalsetwo, 1000)
         break
-         }
-       }
- })} function backFalsetwo(){
+                }
+            }
+        }
+    }
+)} 
+
+function backFalsetwo(){
         clickTwo = false
-}
-cancellJump2();
+}       cancellJump2();
+
+// Define as teclas de movimentação como false
 
 window.addEventListener('keyup',(event) => {
     switch (event.key) {
@@ -398,7 +423,7 @@ window.addEventListener('keyup',(event) => {
 
     case 'a':
         keys.a.pressed = false
-        break  
+        break 
     
     //Teclas de mover do segundo jogador
     
@@ -408,6 +433,10 @@ window.addEventListener('keyup',(event) => {
 
     case 'ArrowLeft':
         keys.ArrowLeft.pressed = false
+        break
+
+    case 'ArrowUp':
+        keys.ArrowUp.pressed = false
         break
 
     }

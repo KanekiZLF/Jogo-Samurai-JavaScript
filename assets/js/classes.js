@@ -204,6 +204,13 @@ class Lutador extends Sprite {
             this.framesMax = this.sprites.jump.framesMax
             this.framesCurrent = 0
         }   break
+
+        case 'jump2':
+            if (this.image !== this.sprites.jump2.image){
+            this.image = this.sprites.jump2.image    
+            this.framesMax = this.sprites.jump2.framesMax
+            this.framesCurrent = 0
+        }   break
         
         case 'fall':
             if (this.image !== this.sprites.fall.image){
