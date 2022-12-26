@@ -55,6 +55,10 @@ const player = new Lutador ({
         imageSrc: 'assets/img/samuraiMack/Idle.png',
         framesMax: 8
     },
+    idle2: {
+        imageSrc: 'assets/img/samuraiMack/Idle2.png',
+        framesMax: 8
+    },
     run: {
         imageSrc: 'assets/img/samuraiMack/Run.png',
         framesMax: 8,
@@ -67,8 +71,16 @@ const player = new Lutador ({
         imageSrc: 'assets/img/samuraiMack/Jump.png',
         framesMax: 2,
     },
+    jump2: {
+        imageSrc: 'assets/img/samuraiMack/Jump2.png',
+        framesMax: 2,
+    },
     fall: {
         imageSrc: 'assets/img/samuraiMack/Fall.png',
+        framesMax: 2,
+    },
+    fall2: {
+        imageSrc: 'assets/img/samuraiMack/Fall2.png',
         framesMax: 2,
     },
     attack1: {
@@ -147,6 +159,10 @@ const player = new Lutador ({
         imageSrc: 'assets/img/kenji/Fall.png',
         framesMax: 2,
     },
+    fall2: {
+        imageSrc: 'assets/img/kenji/Fall2.png',
+        framesMax: 2,
+    },
     attack1: {
         imageSrc: 'assets/img/kenji/Attack1.png',
         framesMax: 4,
@@ -187,9 +203,6 @@ const player = new Lutador ({
             ArrowLeft: {
                 pressed: false
             },
-            ArrowUp: {
-                pressed: false
-            }
         }
 
 relogio();
@@ -227,9 +240,16 @@ function animate() {
 
     if(player.velocity.y < 0) {
         player.switchSprite('jump')
-    } else if (player.velocity.y > 0){
-        player.switchSprite('fall')  
+    if(player.lastKey === 'a') {
+        player.switchSprite('jump2') 
     }
+} 
+    else if (player.velocity.y > 0){
+        player.switchSprite('fall')  
+        if (player.lastKey === 'a'){
+        player.switchSprite('fall2') 
+    }
+}
 
     // Movimentação do Segundo Jogador
     
@@ -246,10 +266,16 @@ function animate() {
 
     if(enemy.velocity.y < 0) {
         enemy.switchSprite('jump')
-    } 
+    if(enemy.lastKey === 'ArrowRight') {
+        enemy.switchSprite('jump2') 
+    }
+} 
     else if (enemy.velocity.y > 0){   
         enemy.switchSprite('fall')
+        if(enemy.lastKey === 'ArrowRight'){
+        enemy.switchSprite('fall2')
     }
+}
     
 
     // Verifica se o Jogador foi atingido, se for, então, define uma animação
@@ -350,7 +376,6 @@ window.addEventListener('keydown',(event) => {
         break
 
     case 'ArrowUp':
-        keys.ArrowUp.pressed = true
         enemy.velocity.y = 0
         break
         
@@ -434,11 +459,6 @@ window.addEventListener('keyup',(event) => {
     case 'ArrowLeft':
         keys.ArrowLeft.pressed = false
         break
-
-    case 'ArrowUp':
-        keys.ArrowUp.pressed = false
-        break
-
     }
 })
 

@@ -183,6 +183,13 @@ class Lutador extends Sprite {
             this.framesMax = this.sprites.idle.framesMax
             this.framesCurrent = 0
         }   break
+        
+        case 'idle2':
+            if (this.image !== this.sprites.idle2.image){
+            this.image = this.sprites.idle2.image    
+            this.framesMax = this.sprites.idle2.framesMax
+            this.framesCurrent = 0
+        }   break
 
             case 'run':
             if (this.image !== this.sprites.run.image){
@@ -216,6 +223,13 @@ class Lutador extends Sprite {
             if (this.image !== this.sprites.fall.image){
             this.image = this.sprites.fall.image    
             this.framesMax = this.sprites.fall.framesMax
+            this.framesCurrent = 0
+        }   break
+
+        case 'fall2':
+            if (this.image !== this.sprites.fall2.image){
+            this.image = this.sprites.fall2.image    
+            this.framesMax = this.sprites.fall2.framesMax
             this.framesCurrent = 0
         }   break
 
