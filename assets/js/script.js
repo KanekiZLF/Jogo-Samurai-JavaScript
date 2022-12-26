@@ -29,7 +29,7 @@ const loja = new Sprite({
  // Caixa do Player Um
 const player = new Lutador ({
     position: {
-        x:0,
+        x:150,
         y:0
     }, 
     velocity: {
@@ -110,7 +110,7 @@ const player = new Lutador ({
   // Caixa do Player Dois
     const enemy = new Lutador ({
         position: {
-            x:400,
+            x:850,
             y:100
         }, 
         velocity: {
@@ -461,6 +461,59 @@ window.addEventListener('keyup',(event) => {
         break
     }
 })
+
+function limitP1(){
+    window.addEventListener('keydown',(event) => {
+        if(!player.dead){
+            if(player.position.x <= 150) {
+        switch (event.key) {
+        case 'a':
+            keys.a.pressed = false
+            console.log('Saindo dos Limites')
+            break
+                }
+        
+            }
+        }
+        if(!enemy.dead){
+            if(enemy.position.x <= 150) {
+        switch (event.key) {
+        case 'ArrowLeft':
+            keys.ArrowLeft.pressed = false
+            console.log('Saindo dos Limites')
+            break
+                }  
+            }
+        }
+    }
+)} 
+limitP1();
+
+function limitP2(){
+    window.addEventListener('keydown',(event) => {
+        if(!player.dead){
+            if(player.position.x >= 850) {
+        switch (event.key) {
+        case 'd':
+            keys.d.pressed = false
+            console.log('Saindo dos Limites')
+            break
+                }
+            }
+        }
+        if(!enemy.dead){
+            if(enemy.position.x >= 850) {
+        switch (event.key) {
+        case 'ArrowRight':
+            keys.ArrowRight.pressed = false
+            console.log('Saindo dos Limites')
+            break
+                }
+            }
+        }
+    }
+)} 
+limitP2();
 
 // Mostra/Oculta o Popoup 
 const popup = document.querySelector('.popup-wrapper')
