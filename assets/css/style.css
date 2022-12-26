@@ -197,7 +197,9 @@ pre {
     text-align: center;
     width: 100%;
     max-width: 560px;
-    margin: 10% auto;
+    margin: 15% auto;
+    height: 100%;
+    max-height: 250px;
     padding: 20px;
     background: white;
     position: relative;
@@ -209,6 +211,29 @@ pre {
     padding: 6px 10px;
     text-decoration: none;
     background: crimson;
+}
+
+.container-player {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+
+#P1, #Multi, #P2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 114px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 22px;
+}
+
+#P1:hover, #Multi:hover, #P2:hover {
+    background-color: rgb(207, 85, 85);
+    transition: .4s;
 }
 
 .popup-close {

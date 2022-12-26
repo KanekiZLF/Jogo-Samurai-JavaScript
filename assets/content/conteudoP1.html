@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Desenvolvido por Luiz F. R. Pimentel -->
+<html lang="pt_BR"  >
+<head>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="assets/css/style.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="assets/js/script.js" defer></script>
+     <script src="assets/js/utils.js"></script>
+     <script src="assets/js/classes.js"></script>
+<meta charset="UTF-8">
+<title>Jogo Samurai</title>
+ </head>
+  <body>
+    <header class="header">
+        <a class="logo" href="index.html"><img class="logo2" src="assets/img/logo.png"></a>
+           <!-- Inicio do Menu Central -->
+       <nav>
+        <ul class="menu">
+         <li><a class="menu2" href="#inicio">Inicio</a></li>
+         <li><a class="menu2" id="popupOn" href="#como-jogar">Como Jogar</a></li>
+         <li><a class="menu2" href="#projetos">Projetos</a></li>
+         <li><a class="menu2" href="#habilidades">Habilidades</a></li> 
+        </ul>
+       </nav>
+         <!-- Fim do Menu Central -->
+</header>
+<section id="game-set" >
+   <div class="position">
+    <div style="position: relative;">
+    <!-- Pequena Caixa de Saude -->
+     <div class="life"">
+    <!-- Barra de Saude dos Players -->
+      <div class="psaude">
+       <div style="background-color: red; height: 30px; width: 100%;"></div>
+       <div id="saude1"></div></div>
+    <!-- Relogio Timer -->
+        <div id="timer">10</div>
+    <!-- Barra de Saude do Player 1-->
+          <div class="bsaude">
+           <div style="background-color: red; height: 30px;"></div>
+           <div id="saude2"></div> 
+            </div>    
+          </div>
+        <div id="resultado">Empate</div>
+       <canvas class="canvas"></canvas>
+    </div>
+  </div>
+<div id="show" style="display: none;" class="popup-wrapper">
+ <div class="popup">
+  <div class="popup-close">x</div>
+    <div class="pop-content">
+        <h2>Instruções de Jogo</h2><br/>
+        <pre>Player 1 | Player 2</pre><br/>
+        <div class="container-inst">
+        <p class="p1">Use as teclas A W D para se movimentar, ESPAÇO para Atacar.</p><br/>
+        <p class="p2">Use as teclas ◀️ 🔼 ▶️ para se movimentar, 🔽 para Atacar.</p><br/>
+        </div><br/>
+        <div class="container-player">
+        <a id="P1" class="popup-link" onclick="openPage('P1', 'game-set')">Player 1</a>
+        <a id="Multi" class="popup-link" onclick="openPage('Multi', 'game-set')">Multijogador</a>
+        <a id="P2" class="popup-link" onclick="openPage('P2', 'game-set')">Player 2</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="container-one">
+<section class="section-one">
+<ul>
+    <li>Ola</li>
+    <button id="btn">Cliqueme</button>
+    <li></li>
+    <li></li>
+</ul>
+</section>
+</div>
+ </body>
+</html>
+

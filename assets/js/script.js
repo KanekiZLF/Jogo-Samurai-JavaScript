@@ -514,3 +514,7 @@ popup.addEventListener('click', event => {
     }
 })
 
+// Define oque sera recarregado, sem da refresh na pagina toda
+
+
+

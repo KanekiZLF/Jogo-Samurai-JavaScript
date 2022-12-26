@@ -33,6 +33,7 @@ quemVenceu({player, enemy, timerId})
     }
 }
 
+
 // Desativa as teclas "Espaço, Seta pra Cima, Seta pra Baixo"
 
 window.onkeydown = function (e) {
