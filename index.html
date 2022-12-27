@@ -7,7 +7,7 @@
      <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="assets/css/style.css">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     <script id="scriptG" src="assets/js/script.js" defer></script>
+     <script src="assets/js/script.js" defer></script>
      <script src="assets/js/utils.js"></script>
      <script src="assets/js/classes.js"></script>
 <meta charset="UTF-8">
@@ -16,6 +16,9 @@
   <body>
     <header class="header">
         <a class="logo" href="index.html"><img class="logo2" src="assets/img/logo.png"></a>
+        <div class="container-audio">
+        <audio class="audio" src="assets/songs/ambiente.mp3" controls="controls" autoplay="autoplay"></audio>
+        </div>
            <!-- Inicio do Menu Central -->
        <nav>
         <ul class="menu">
@@ -27,7 +30,7 @@
        </nav>
          <!-- Fim do Menu Central -->
 </header>
-<section id="game-set" >
+<section>
    <div class="position">
     <div style="position: relative;">
     <!-- Pequena Caixa de Saude -->
@@ -59,9 +62,9 @@
         <p class="p2">Use as teclas ◀️ 🔼 ▶️ para se movimentar, 🔽 para Atacar.</p><br/>
         </div><br/>
         <div class="container-player">
-        <a id="P1" class="popup-link" onclick="temporiza()">Player 1</a>
-        <a id="Multi" class="popup-link" onclick="temporiza()">Multijogador</a>
-        <a id="P2" class="popup-link" onclick="temporiza()">Player 2</a>
+        <a id="P1" class="popup-link" onclick="backLife()">Player 1</a>
+        <a id="Multi" class="popup-link" onclick="backLife()">Multijogador</a>
+        <a id="P2" class="popup-link" onclick="backLife()">Player 2</a>
     </div>
    </div>
   </div>
