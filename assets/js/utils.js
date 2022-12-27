@@ -35,7 +35,7 @@ quemVenceu({player, enemy, timerId})
     } 
 }
 
-function temporiza (){
+function backLife (){
     if (player.dead === true || enemy.dead === true) {
         player.saude = 100
         player.dead = false
