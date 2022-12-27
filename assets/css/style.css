@@ -73,8 +73,9 @@
 
 #resultado {
     position: absolute; 
-    color: white; display: 
-    flex; align-items: center; 
+    color: rgb(56 60 47);
+    display: flex; 
+    align-items: center; 
     justify-content: center;
     top: 0;
     bottom: 0;
@@ -82,6 +83,7 @@
     left: 0;
     display: none;
     font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
 }
 
 .reset {
