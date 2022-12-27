@@ -29,7 +29,7 @@ const loja = new Sprite({
  // Caixa do Player Um
 const player = new Lutador ({
     position: {
-        x:150,
+        x:100,
         y:0
     }, 
     velocity: {
@@ -191,10 +191,19 @@ const player = new Lutador ({
             a: {
                 pressed: false
             },
+            A: {
+                pressed: false
+            },
             d: {
                 pressed: false
             },
+            D: {
+                pressed: false
+            },
             w: {
+                pressed: false
+            },
+            W: {
                 pressed: false
             },
             ArrowRight: {
@@ -342,32 +351,36 @@ function animate() {
 animate()
 
 window.addEventListener('keydown',(event) => {
-    if (!player.dead) {
+    if (!player.dead && !onP1) {
     switch (event.key) {
     
         // Teclas do Primeiro Jogador
     case 'd':
+    case 'D':
         keys.d.pressed = true
         player.lastKey = 'd'
         break
 
     case 'a':
+    case 'A':
         keys.a.pressed = true
         player.lastKey = 'a'
         break
 
     case 'w':
+    case 'W':
         player.velocity.y = 0
         break
         // Tecla de Ataque Primeiro Jogador
     
-        case ' ':
+    case 's':
+    case 'S':   
         player.attack()
         break
     }
 }
 
-    if (!enemy.dead) {
+    if (!enemy.dead && !onP2) {
     switch (event.key) {
         // Teclas do segundo jogador
     
@@ -400,11 +413,13 @@ var clickOne = false;
 
 function cancellJump1(){
 window.addEventListener('keydown',(event) => {
-    if(!player.dead){
+    if(!player.dead && !onP1){
         if(!clickOne) {
     switch (event.key) {
     case 'w':
-        player.velocity.y = -20  
+    case 'W':
+        player.velocity.y = -20
+        songJump2.play();
         clickOne = true
         setTimeout(backFalseone, 1000)
         break
@@ -425,11 +440,12 @@ var clickTwo = false;
 
 function cancellJump2(){
 window.addEventListener('keydown',(event) => {
-    if(!enemy.dead){ 
+    if(!enemy.dead && !onP2){ 
         if(!clickTwo) {
     switch (event.key) {
     case 'ArrowUp':
         enemy.velocity.y = -20
+        songJump1.play();
         clickTwo = true
         setTimeout(backFalsetwo, 1000)
         break
@@ -449,11 +465,15 @@ window.addEventListener('keyup',(event) => {
     switch (event.key) {
     // Teclas de mover do Primeiro Jogador
     case 'd':
+    case 'D':
         keys.d.pressed = false
+        keys.D.pressed = false
         break
 
     case 'a':
+    case 'A':
         keys.a.pressed = false
+        keys.A.pressed = false
         break 
     
     //Teclas de mover do segundo jogador
@@ -474,12 +494,12 @@ function limitP1(){
     window.addEventListener('keydown',(event) => {
         if(!player.dead){
             if(player.position.x <= 20) {
-                player.position.x = 100
+                player.position.x = 840
             }
         }
         if(!enemy.dead){
             if(enemy.position.x <= 20) {
-                enemy.position.x = 100
+                enemy.position.x = 840
             }
         }
     }
@@ -489,12 +509,12 @@ function limitP2(){
     window.addEventListener('keydown',(event) => {
         if(!player.dead){
             if(player.position.x >= 870) {
-                player.position.x = 840
+                player.position.x = 100
             }
         }
         if(!enemy.dead){
             if(enemy.position.x >= 870) {
-                enemy.position.x = 840
+                enemy.position.x = 100
             }
         }
     }
@@ -526,7 +546,30 @@ const songAtack1 = new Audio();
 const songAtack2 = new Audio();
 const songAtackMiss1 = new Audio();
 const songAtackMiss2 = new Audio();
+const songJump1 = new Audio();
+const songJump2 = new Audio();
 songAtack1.src = 'assets/songs/ataque1.ogg';
 songAtack2.src = 'assets/songs/ataque2.ogg';
 songAtackMiss1.src = 'assets/songs/ataqueMiss1.mp3';
 songAtackMiss2.src = 'assets/songs/ataqueMiss1.mp3';
+songJump1.src = 'assets/songs/jump1.mp3';
+songJump2.src = 'assets/songs/jump1.mp3';
+
+
+// Define o volume da musica de Ambiente Padrão 0.3
+
+var audio = document.getElementById("audio");
+audio.volume = 0.3;
+
+var clickP1 = document.getElementById('P1')
+clickP1 = false
+
+function clicou(){
+
+}
+
+var li = document.getElementById("P1");
+li.addEventListener("click", function(event) {
+    console.log(event.target);
+    alert(event.target.innerHTML)
+})

@@ -38,25 +38,25 @@ quemVenceu({player, enemy, timerId})
 
 // Redefine ambos os jogadores
 
-function backLife (){
-    if (player.dead === true || enemy.dead === true || player.saude >= 0 || enemy.saude >= 0) {
+function resetGame (){
         player.saude = 100
         player.dead = false
+        player.position.x = 100
         enemy.saude = 100
         enemy.dead = false
+        enemy.position.x = 850
         document.getElementById('saude1').style.width = '100%'
         document.getElementById('saude2').style.width = '100%'
         document.querySelector('#resultado').innerHTML = ' '
         document.querySelector('#resultado').style.display = 'flex'
         timerSet();
         timer = 60
-    } 
 }
 // Redefine o relogio
+
 function timerSet(){
         setTimeout(relogio, 1000)
     }
-
 
 // Desativa as teclas "Espaço, Seta pra Cima, Seta pra Baixo"
 
@@ -70,3 +70,27 @@ window.onkeydown = function (e) {
 }
 
 console.info("Este Jogo foi Desenvolvido Por Luiz F. R. Pimentel")
+var onP1 = false
+var onMulti = false
+var onP2 = false
+
+function gameP1(){
+    if (onP1 === false){
+        onP1 = true
+        onP2 = false
+    }
+}
+
+function gameMulti(){
+    if (onMulti === false){
+        onMulti = true
+    } else if (onP1 = false){}
+}
+
+function gameP2(){
+    if (onP2 === false){
+        onP2 = true
+        onP1 = false
+    }
+}
+
