@@ -17,7 +17,7 @@
     <header class="header">
         <a class="logo" href="index.html"><img class="logo2" src="assets/img/logo.png"></a>
         <div class="container-audio">
-        <audio class="audio" src="assets/songs/ambiente.mp3" controls="controls" autoplay="autoplay"></audio>
+        <audio id="audio" class="audio" src="assets/songs/ambiente.mp3" controls="controls" autoplay="autoplay"></audio>
         </div>
            <!-- Inicio do Menu Central -->
        <nav>
@@ -58,13 +58,13 @@
         <h2>Instruções de Jogo</h2><br/>
         <pre>Player 1 | Player 2</pre><br/>
         <div class="container-inst">
-        <p class="p1">Use as teclas A W D para se movimentar, ESPAÇO para Atacar.</p><br/>
+        <p class="p1">Use as teclas A W D para se movimentar, S para Atacar.</p><br/>
         <p class="p2">Use as teclas ◀️ 🔼 ▶️ para se movimentar, 🔽 para Atacar.</p><br/>
         </div><br/>
         <div class="container-player">
-        <a id="P1" class="popup-link" onclick="backLife()">Player 1</a>
-        <a id="Multi" class="popup-link" onclick="backLife()">Multijogador</a>
-        <a id="P2" class="popup-link" onclick="backLife()">Player 2</a>
+        <a id="P1" class="popup-link" onclick="resetGame(), gameP2()">Player 1</a>
+        <a id="Multi" class="popup-link" onclick="resetGame()">Multijogador</a>
+        <a id="P2" class="popup-link" onclick="resetGame(), gameP1()">Player 2</a>
     </div>
    </div>
   </div>
