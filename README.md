@@ -1,5 +1,3 @@
-#Este jogo foi desenvolvido por Chris Courses.
+# Este jogo foi desenvolvido por Luiz Fernando R. Pimentel
 
-https://www.youtube.com/watch?v=vyqbNFMDRGQ
-
-Estou alterando o jogo para que fique com uma jogabilidade melhor e para aprimorar minhas habilidades em JavaScript
+## Estou alterando o jogo para que fique com uma jogabilidade melhor e para aprimorar minhas habilidades em JavaScript
