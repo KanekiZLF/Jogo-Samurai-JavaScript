@@ -73,8 +73,9 @@
 
 #resultado {
     position: absolute; 
-    color: white; display: 
-    flex; align-items: center; 
+    color: rgb(56 60 47);
+    display: flex; 
+    align-items: center; 
     justify-content: center;
     top: 0;
     bottom: 0;
@@ -82,6 +83,7 @@
     left: 0;
     display: none;
     font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
 }
 
 .reset {
@@ -102,6 +104,18 @@
     flex-wrap: wrap;
     background: rgb(39, 21, 21);
     width:100%;
+    height: 70px;
+}
+
+.audio {
+    display: flex;
+}
+
+.container-audio {
+    display: flex;
+    width: 503px;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 
@@ -132,7 +146,7 @@
 }
 
 .logo2 {
-    max-width: 60px;
+    max-width: 70px;
     display: block;
     margin-left: 50px;
     padding: 6px;

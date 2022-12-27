@@ -290,7 +290,9 @@ function animate() {
     ){
         enemy.takeHit()
         player.isAtacking = false
-        // document.querySelector("#saude2").style.width = enemy.saude + '%'
+        if(!enemy.dead){
+           songAtack2.play();
+        }
         gsap.to('#saude2', {
             width: enemy.saude + '%'
           })
@@ -300,6 +302,7 @@ function animate() {
 
     if (player.isAtacking && player.framesCurrent === 4 ) {
         player.isAtacking = false
+        songAtackMiss2.play();
     }
     
 
@@ -316,8 +319,10 @@ function animate() {
       ){
           player.takeHit()
           enemy.isAtacking = false
-        //   document.querySelector("#saude1").style.width = player.saude + '%'
-        gsap.to('#saude1', {
+          if(!player.dead){
+            songAtack1.play();
+          }
+            gsap.to('#saude1', {
             width: player.saude + '%'
           })
       }
@@ -325,7 +330,8 @@ function animate() {
       
         if (enemy.isAtacking && enemy.framesCurrent === 2 ) {
         enemy.isAtacking = false
-    }
+        songAtackMiss1.play();
+        }
 
       // Fim de Jogo baseado na Saude
       if (enemy.saude <= 0 || player.saude <= 0) {
@@ -514,7 +520,13 @@ popup.addEventListener('click', event => {
     }
 })
 
-// Define oque sera recarregado, sem da refresh na pagina toda
+// Define os sons que serão usados dentro do jogo
 
-
-
+const songAtack1 = new Audio();
+const songAtack2 = new Audio();
+const songAtackMiss1 = new Audio();
+const songAtackMiss2 = new Audio();
+songAtack1.src = 'assets/songs/ataque1.ogg';
+songAtack2.src = 'assets/songs/ataque2.ogg';
+songAtackMiss1.src = 'assets/songs/ataqueMiss1.mp3';
+songAtackMiss2.src = 'assets/songs/ataqueMiss1.mp3';
