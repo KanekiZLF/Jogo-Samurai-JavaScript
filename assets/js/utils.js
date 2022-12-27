@@ -50,6 +50,7 @@ function backLife (){
         document.querySelector('#resultado').style.display = 'flex'
         timerSet();
         timer = 60
+        songAmbiente.play();
     } 
 }
 // Redefine o relogio

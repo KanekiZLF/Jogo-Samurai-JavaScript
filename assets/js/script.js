@@ -292,6 +292,7 @@ function animate() {
         player.isAtacking = false
         if(!enemy.dead){
            songAtack2.play();
+           songAmbiente.play();
         }
         gsap.to('#saude2', {
             width: enemy.saude + '%'
@@ -303,6 +304,7 @@ function animate() {
     if (player.isAtacking && player.framesCurrent === 4 ) {
         player.isAtacking = false
         songAtackMiss2.play();
+        songAmbiente.play();
     }
     
 
@@ -321,6 +323,7 @@ function animate() {
           enemy.isAtacking = false
           if(!player.dead){
             songAtack1.play();
+            songAmbiente.play();
           }
             gsap.to('#saude1', {
             width: player.saude + '%'
@@ -331,6 +334,7 @@ function animate() {
         if (enemy.isAtacking && enemy.framesCurrent === 2 ) {
         enemy.isAtacking = false
         songAtackMiss1.play();
+        songAmbiente.play();
         }
 
       // Fim de Jogo baseado na Saude
@@ -526,7 +530,9 @@ const songAtack1 = new Audio();
 const songAtack2 = new Audio();
 const songAtackMiss1 = new Audio();
 const songAtackMiss2 = new Audio();
+const songAmbiente = new Audio();
 songAtack1.src = 'assets/songs/ataque1.ogg';
 songAtack2.src = 'assets/songs/ataque2.ogg';
 songAtackMiss1.src = 'assets/songs/ataqueMiss1.mp3';
 songAtackMiss2.src = 'assets/songs/ataqueMiss1.mp3';
+songAmbiente.src = 'assets/songs/ambiente.mp3';
