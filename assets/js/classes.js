@@ -91,6 +91,7 @@ class Lutador extends Sprite {
         this.framesHold = 5
         this.sprites = sprites
         this.dead = false
+        this.check = false
 
         for (const sprite in this.sprites) {
             sprites[sprite].image = new Image()
@@ -156,7 +157,13 @@ class Lutador extends Sprite {
 
     switchSprite(sprite) {
         
-        if (this.image === this.sprites.death.image) {
+        if (this.image === this.sprites.death.image && player.saude <= 0) {
+            if (this.framesCurrent === this.sprites.death.framesMax -1 )
+                this.dead = true
+                return
+        }
+
+        if (this.image === this.sprites.death.image && enemy.saude <= 0) {
             if (this.framesCurrent === this.sprites.death.framesMax -1 )
                 this.dead = true
                 return

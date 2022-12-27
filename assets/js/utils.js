@@ -8,7 +8,9 @@ function colisaoRetangular({retangulo1, retangulo2}) {
 }
 
 function quemVenceu({player, enemy, timerId}) {
-clearTimeout (timerId)
+    if (player.dead || enemy.dead){
+        clearTimeout(timerId)
+    }
 document.querySelector('#resultado').style.display = 'flex'
 if (player.saude === enemy.saude) {
 document.querySelector('#resultado').innerHTML = 'Empate'
@@ -20,7 +22,7 @@ document.querySelector('#resultado').innerHTML = 'Jogador 2 Ganhou'
 }
 
 // Determina o fim do Jogo se o Relogio chegar a 0 
-let timer = 60
+let timer = 90
 let timerId
 function relogio () {
 if( timer > 0) {
@@ -30,9 +32,23 @@ document.querySelector('#timer').innerHTML = timer
 }
 if (timer === 0){
 quemVenceu({player, enemy, timerId})
-    }
+    } 
 }
 
+function temporiza (){
+    if (player.dead === true || enemy.dead === true) {
+        player.saude = 100
+        player.dead = false
+        enemy.saude = 100
+        enemy.dead = false
+        document.getElementById('saude1').style.width = '100%'
+        document.getElementById('saude2').style.width = '100%'
+        document.querySelector('#resultado').innerHTML = ' '
+        document.querySelector('#resultado').style.display = 'flex'
+        
+    }
+        timer = 60
+}
 
 // Desativa as teclas "Espaço, Seta pra Cima, Seta pra Baixo"
 
