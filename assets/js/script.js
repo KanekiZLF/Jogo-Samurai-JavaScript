@@ -526,11 +526,7 @@ const songAtack1 = new Audio();
 const songAtack2 = new Audio();
 const songAtackMiss1 = new Audio();
 const songAtackMiss2 = new Audio();
-const songAmbiente = new Audio();
 songAtack1.src = 'assets/songs/ataque1.ogg';
 songAtack2.src = 'assets/songs/ataque2.ogg';
 songAtackMiss1.src = 'assets/songs/ataqueMiss1.mp3';
 songAtackMiss2.src = 'assets/songs/ataqueMiss1.mp3';
-songAmbiente.src = 'assets/songs/ambiente.mp3';
-
-songAmbiente.play();
