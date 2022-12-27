@@ -1,5 +1,5 @@
-Este jogo foi desenvolvido por Chris Courses.  
+#Este jogo foi desenvolvido por Chris Courses.
 
 https://www.youtube.com/watch?v=vyqbNFMDRGQ
 
-Apenas reescrevi o codigo comentando as funções a medida em que fui aprendendo.
+Estou alterando o jogo para que fique com uma jogabilidade melhor e para aprimorar minhas habilidades em JavaScript
