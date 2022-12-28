@@ -234,7 +234,7 @@ pre {
 
 }
 
-#P1, #Multi, #P2 {
+#p1, #multi, #p2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -245,7 +245,7 @@ pre {
     border-radius: 22px;
 }
 
-#P1:hover, #Multi:hover, #P2:hover {
+#p1:hover, #multi:hover, #p2:hover {
     background-color: rgb(207, 85, 85);
     transition: .4s;
 }

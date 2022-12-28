@@ -563,9 +563,9 @@ audio.volume = 0.3;
 // Define o modo de Jogo
 
 var onP1 = false
-var setP1 = document.getElementById("P1");
+var setP1 = document.getElementById("p1");
 setP1.addEventListener("click", function(event){
-    if (event.target === P2 || onP2 === false){     
+    if (event.target === p2 || onP2 === false){     
             resetGame()
             onP2 = true
             onP1 = false
@@ -573,9 +573,9 @@ setP1.addEventListener("click", function(event){
 })
 
 var onMulti = false
-var setMulti = document.getElementById("Multi")
+var setMulti = document.getElementById("multi")
 setMulti.addEventListener("click", function(event){
-    if (event.target === Multi){
+    if (event.target === multi){
             resetGame()
             onP1 = false
             onP2 = false
@@ -583,9 +583,9 @@ setMulti.addEventListener("click", function(event){
 })
 
 var onP2 = false
-var setP2 = document.getElementById("P2");
+var setP2 = document.getElementById("p2");
 setP2.addEventListener("click", function(event) {
-    if (event.target === P2 || onP1 === false) {
+    if (event.target === p2 || onP1 === false) {
             resetGame()
             onP1 = true
             onP2 = false
