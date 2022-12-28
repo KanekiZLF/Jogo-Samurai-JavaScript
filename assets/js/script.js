@@ -566,17 +566,18 @@ var onP1 = false
 var setP1 = document.getElementById("p1");
 setP1.addEventListener("click", function(event){
     if (event.target === p2 || onP2 === false){     
-            resetGame()
+            resetGame();
+            moveTo();
             onP2 = true
             onP1 = false
     }
 })
 
 var onMulti = false
-var setMulti = document.getElementById("multi")
+var setMulti = document.getElementById("multi");
 setMulti.addEventListener("click", function(event){
     if (event.target === multi){
-            resetGame()
+            resetGame();
             onP1 = false
             onP2 = false
     }
@@ -586,8 +587,17 @@ var onP2 = false
 var setP2 = document.getElementById("p2");
 setP2.addEventListener("click", function(event) {
     if (event.target === p2 || onP1 === false) {
-            resetGame()
+            resetGame();
             onP1 = true
             onP2 = false
     }
 })
+
+// Define a movimentação automatica
+
+function moveTo(){
+    if(player.position.x >= 0){
+        keys.ArrowLeft.pressed = true
+        enemy.lastKey = 'ArrowLeft'
+    }
+}

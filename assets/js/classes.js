@@ -22,8 +22,7 @@ class Sprite {
     draw() {
         c.drawImage(
             this.image,
-            this.framesCurrent * (this.image.width / this.framesMax),            
-            0,
+            this.framesCurrent * (this.image.width / this.framesMax),0,
             this.image.width / this.framesMax,
             this.image.height,
             this.position.x - this.offset.x, 
@@ -91,7 +90,6 @@ class Lutador extends Sprite {
         this.framesHold = 5
         this.sprites = sprites
         this.dead = false
-        this.check = false
 
         for (const sprite in this.sprites) {
             sprites[sprite].image = new Image()

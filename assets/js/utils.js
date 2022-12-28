@@ -76,3 +76,4 @@ window.onkeydown = function (e) {
 }
 
 console.info("Este Jogo foi Desenvolvido Por Luiz F. R. Pimentel")
+
