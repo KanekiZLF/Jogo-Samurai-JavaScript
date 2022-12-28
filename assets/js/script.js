@@ -488,39 +488,6 @@ window.addEventListener('keyup',(event) => {
     }
 })
 
-// Limita o jogador a ultrapassar os limites do canvas
-
-function limitP1(){
-    window.addEventListener('keydown',(event) => {
-        if(!player.dead){
-            if(player.position.x <= 20) {
-                player.position.x = 840
-            }
-        }
-        if(!enemy.dead){
-            if(enemy.position.x <= 20) {
-                enemy.position.x = 840
-            }
-        }
-    }
-)} 
-limitP1();
-function limitP2(){
-    window.addEventListener('keydown',(event) => {
-        if(!player.dead){
-            if(player.position.x >= 870) {
-                player.position.x = 100
-            }
-        }
-        if(!enemy.dead){
-            if(enemy.position.x >= 870) {
-                enemy.position.x = 100
-            }
-        }
-    }
-)} 
-limitP2();
-
 // Mostra/Oculta o Popoup de Como Jogar
 
 const popup = document.querySelector('.popup-wrapper')

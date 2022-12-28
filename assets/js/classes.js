@@ -125,6 +125,8 @@ class Lutador extends Sprite {
             this.velocity.x = 330
             
         } else this.velocity.y += gravity
+
+        this.position.x = Math.max(0, Math.min(1005 - this.width, this.position.x))
     }
 
     // Define o ataque como VERDADEIRO
