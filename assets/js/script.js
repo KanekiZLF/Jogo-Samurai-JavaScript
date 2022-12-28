@@ -555,21 +555,39 @@ songAtackMiss2.src = 'assets/songs/ataqueMiss1.mp3';
 songJump1.src = 'assets/songs/jump1.mp3';
 songJump2.src = 'assets/songs/jump1.mp3';
 
-
 // Define o volume da musica de Ambiente Padrão 0.3
 
 var audio = document.getElementById("audio");
 audio.volume = 0.3;
 
-var clickP1 = document.getElementById('P1')
-clickP1 = false
+// Define o modo de Jogo
 
-function clicou(){
+var onP1 = false
+var setP1 = document.getElementById("P1");
+setP1.addEventListener("click", function(event){
+    if (event.target === P2 || onP2 === false){     
+            resetGame()
+            onP2 = true
+            onP1 = false
+    }
+})
 
-}
+var onMulti = false
+var setMulti = document.getElementById("Multi")
+setMulti.addEventListener("click", function(event){
+    if (event.target === Multi){
+            resetGame()
+            onP1 = false
+            onP2 = false
+    }
+})
 
-var li = document.getElementById("P1");
-li.addEventListener("click", function(event) {
-    console.log(event.target);
-    alert(event.target.innerHTML)
+var onP2 = false
+var setP2 = document.getElementById("P2");
+setP2.addEventListener("click", function(event) {
+    if (event.target === P2 || onP1 === false) {
+            resetGame()
+            onP1 = true
+            onP2 = false
+    }
 })

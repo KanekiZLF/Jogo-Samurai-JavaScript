@@ -7,8 +7,14 @@ function colisaoRetangular({retangulo1, retangulo2}) {
     )
 }
 
+// Define oque sera apresentado com base nos Resultados e redefine o relogio
+
+var timerOn = false
 function quemVenceu({player, enemy, timerId}) {
-clearTimeout(timerId)
+if (timerOn === false){
+    clearTimeout(timerId)
+} else (timerOn = false);{}
+timerOn = true
 document.querySelector('#resultado').style.display = 'flex'
 if (player.saude === enemy.saude) {
 document.querySelector('#resultado').innerHTML = 'Empate'
@@ -19,18 +25,24 @@ document.querySelector('#resultado').innerHTML = 'Jogador 2 Ganhou'
     }
 }
 
+// Redefine o relogio
+
+function timerSet(){
+    if(timerOn === true){
+        setTimeout(relogio, 1000)
+        timerOn = false
+    }  
+}
+
 // Determina o fim do Jogo se o Relogio chegar a 0 
-let timer = 61
+let timer = 60
 let timerId
 function relogio () {
 if( timer > 0) {
 timerId = setTimeout(relogio, 1000)
 timer--
 document.querySelector('#timer').innerHTML = timer
-}
-if (timer === 60){
-    clearTimeout(timerId)
-}
+    }
 if (timer === 0){
 quemVenceu({player, enemy, timerId})
     } 
@@ -51,13 +63,7 @@ function resetGame (){
         document.querySelector('#resultado').style.display = 'flex'
         timerSet();
         timer = 60
-}
-// Redefine o relogio
-
-function timerSet(){
-        setTimeout(relogio, 1000)
-    }
-
+}   
 // Desativa as teclas "Espaço, Seta pra Cima, Seta pra Baixo"
 
 window.onkeydown = function (e) {
@@ -70,27 +76,3 @@ window.onkeydown = function (e) {
 }
 
 console.info("Este Jogo foi Desenvolvido Por Luiz F. R. Pimentel")
-var onP1 = false
-var onMulti = false
-var onP2 = false
-
-function gameP1(){
-    if (onP1 === false){
-        onP1 = true
-        onP2 = false
-    }
-}
-
-function gameMulti(){
-    if (onMulti === false){
-        onMulti = true
-    } else if (onP1 = false){}
-}
-
-function gameP2(){
-    if (onP2 === false){
-        onP2 = true
-        onP1 = false
-    }
-}
-
