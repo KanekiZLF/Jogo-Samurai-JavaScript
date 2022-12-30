@@ -128,8 +128,11 @@ class Lutador extends Sprite {
 
         this.position.x = Math.max(0, Math.min(1005 - this.width, this.position.x))
         if (onP2){
-            moveTo();
-        }                    
+            moveP2();
+        }
+        if (onP1){
+            moveP1();
+        }                     
     }
 
     // Define o ataque como VERDADEIRO
