@@ -534,7 +534,6 @@ var setP1 = document.getElementById("p1");
 setP1.addEventListener("click", function(event){
     if (event.target === p2 || onP2 === false){     
             resetGame();
-            moveTo();
             onP2 = true
             onP1 = false
     }
@@ -561,10 +560,29 @@ setP2.addEventListener("click", function(event) {
 })
 
 // Define a movimentação automatica
-
 function moveTo(){
-    if(player.position.x >= 0){
+if (!player.dead){
+    if(player.position.x - enemy.position.x === -250){
+        enemy.switchSprite('idle')
         keys.ArrowLeft.pressed = true
         enemy.lastKey = 'ArrowLeft'
+} 
+    else if (player.position.x - enemy.position.x === 250){
+        keys.ArrowRight.pressed = true
+        enemy.lastKey = 'ArrowRight'
+}
+    if (player.position.x - enemy.position.x === -100){
+        enemy.attack()
+}
+    if (enemy.dead){
+        keys.ArrowRight.pressed = false
+        keys.ArrowLeft.pressed = false
+        enemy.switchSprite('dead')
+}
+    } 
+    else if (player.dead){
+        keys.ArrowRight.pressed = false
+        keys.ArrowLeft.pressed = false
+        enemy.switchSprite('idle')
     }
 }

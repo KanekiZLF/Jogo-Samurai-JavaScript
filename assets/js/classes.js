@@ -127,19 +127,16 @@ class Lutador extends Sprite {
         } else this.velocity.y += gravity
 
         this.position.x = Math.max(0, Math.min(1005 - this.width, this.position.x))
+        if (onP2){
+            moveTo();
+        } 
     }
 
     // Define o ataque como VERDADEIRO
     
     attack() {
         this.switchSprite('attack1')
-        this.isAtacking = true
-
-    // Define o tempo do ataque em milisegundos
-    
-    /*  setTimeout(() => {
-            this.isAtacking = false
-        }, 1000); */   
+        this.isAtacking = true 
     }
 
     // Define qual ação vai ser feita caso "takeHit" seja verdadeiro
