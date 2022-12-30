@@ -200,12 +200,6 @@ const player = new Lutador ({
             D: {
                 pressed: false
             },
-            w: {
-                pressed: false
-            },
-            W: {
-                pressed: false
-            },
             ArrowRight: {
                 pressed: false
             },
@@ -421,7 +415,7 @@ window.addEventListener('keydown',(event) => {
         player.velocity.y = -20
         songJump2.play();
         clickOne = true
-        setTimeout(backFalseone, 1000)
+        setTimeout(backFalseOne, 1000)
         break
                 }
             }
@@ -430,7 +424,7 @@ window.addEventListener('keydown',(event) => {
     
 )}
  
- function backFalseone(){
+ function backFalseOne(){
         clickOne = false
 }       cancellJump1();
 
@@ -447,7 +441,7 @@ window.addEventListener('keydown',(event) => {
         enemy.velocity.y = -20
         songJump1.play();
         clickTwo = true
-        setTimeout(backFalsetwo, 1000)
+        setTimeout(backFalseTwo, 1000)
         break
                 }
             }
@@ -455,7 +449,7 @@ window.addEventListener('keydown',(event) => {
     }
 )} 
 
-function backFalsetwo(){
+function backFalseTwo(){
         clickTwo = false
 }       cancellJump2();
 
@@ -532,11 +526,10 @@ audio.volume = 0.3;
 var onP1 = false
 var setP1 = document.getElementById("p1");
 setP1.addEventListener("click", function(event){
-    if (event.target === p2 || onP2 === false){     
-            resetGame();
-            moveTo();
+    if (event.target === p2 || onP1 === false){     
             onP2 = true
             onP1 = false
+            resetGame();
     }
 })
 
@@ -553,7 +546,7 @@ setMulti.addEventListener("click", function(event){
 var onP2 = false
 var setP2 = document.getElementById("p2");
 setP2.addEventListener("click", function(event) {
-    if (event.target === p2 || onP1 === false) {
+    if (event.target === p2 || onP2 === false) {
             resetGame();
             onP1 = true
             onP2 = false
@@ -561,10 +554,46 @@ setP2.addEventListener("click", function(event) {
 })
 
 // Define a movimentação automatica
-
 function moveTo(){
-    if(player.position.x >= 0){
+if (!player.dead){
+    if(player.position.x - enemy.position.x === -200){
+        enemy.switchSprite('idle')
         keys.ArrowLeft.pressed = true
         enemy.lastKey = 'ArrowLeft'
+} 
+    else if (player.position.x - enemy.position.x === 100){
+        keys.ArrowRight.pressed = true
+        enemy.lastKey = 'ArrowRight'
+}
+    if (player.position.x - enemy.position.x === -100){
+        enemy.attack()
+}
+    if (enemy.dead){
+        keys.ArrowRight.pressed = false
+        keys.ArrowLeft.pressed = false
+        enemy.switchSprite('dead')
+}
+    } 
+    else if (player.dead){
+        keys.ArrowRight.pressed = false
+        keys.ArrowLeft.pressed = false
+        enemy.switchSprite('idle')
+    }
+    if (clickOne === false){
+        window.addEventListener('keydown',(event) => {
+            if(!enemy.dead && !player.dead){ 
+                if(!clickTwo) {
+            switch (event.key) {
+            case 'w':
+            case 'W':
+                enemy.velocity.y = -20
+                songJump1.play();
+                clickTwo = true
+                setTimeout(backFalseTwo, 3000)
+                break
+                        }
+                    }
+                }
+        })
     }
 }

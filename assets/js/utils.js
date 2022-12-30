@@ -54,9 +54,13 @@ function resetGame (){
         player.saude = 100
         player.dead = false
         player.position.x = 100
+        keys.d.pressed = false
+        player.lastKey = 'd'
         enemy.saude = 100
         enemy.dead = false
         enemy.position.x = 850
+        keys.ArrowRight.pressed = false
+        enemy.lastKey = 'ArrowRight'
         document.getElementById('saude1').style.width = '100%'
         document.getElementById('saude2').style.width = '100%'
         document.querySelector('#resultado').innerHTML = ' '
