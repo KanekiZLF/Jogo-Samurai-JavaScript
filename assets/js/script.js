@@ -53,10 +53,6 @@ const player = new Lutador ({
         imageSrc: 'assets/img/Sprites/Rengoku/Idle.png',
         framesMax: 4
     },
-    // idle2: {
-    //     imageSrc: 'assets/img/samuraiMack/Idle2.png',
-    //     framesMax: 8
-    // },
     run: {
         imageSrc: 'assets/img/Sprites/Rengoku/Run.png',
         framesMax: 8,
