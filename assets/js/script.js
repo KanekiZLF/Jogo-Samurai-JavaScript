@@ -4,8 +4,6 @@ const c = canvas.getContext('2d');
 canvas.width = 1024
 canvas.height = 576
 
-c.fillRect(0, 0, canvas.width, canvas.height);
-
 const gravity = 0.7
 
 const background = new Sprite({
@@ -19,7 +17,7 @@ const background = new Sprite({
 const loja = new Sprite({
     position: {
       x: 600,
-      y: 128,
+      y: 114,
     },
     imageSrc: 'assets/img/shop.png',
     scale: 2.75,
@@ -29,7 +27,7 @@ const loja = new Sprite({
  // Caixa do Player Um
 const player = new Lutador ({
     position: {
-        x:100,
+        x:200,
         y:0
     }, 
     velocity: {
@@ -43,74 +41,74 @@ const player = new Lutador ({
 
       //Sprites do Jogador 1
 
-  imageSrc: 'assets/img/samuraiMack/Idle.png',
+  imageSrc: 'assets/img/Sprites/Rengoku/Idle.png',
   framesMax: 8,
-  scale: 2.5,
+  scale: 2,
   offset: {
-    x: 215,
-    y: 157
+    x: 20,
+    y: -23
   },
   sprites: {
     idle: {
-        imageSrc: 'assets/img/samuraiMack/Idle.png',
-        framesMax: 8
+        imageSrc: 'assets/img/Sprites/Rengoku/Idle.png',
+        framesMax: 4
     },
-    idle2: {
-        imageSrc: 'assets/img/samuraiMack/Idle2.png',
-        framesMax: 8
-    },
+    // idle2: {
+    //     imageSrc: 'assets/img/samuraiMack/Idle2.png',
+    //     framesMax: 8
+    // },
     run: {
-        imageSrc: 'assets/img/samuraiMack/Run.png',
+        imageSrc: 'assets/img/Sprites/Rengoku/Run.png',
         framesMax: 8,
     },
     run2: {
-        imageSrc: 'assets/img/samuraiMack/Run2.png',
+        imageSrc: 'assets/img/Sprites/Rengoku/Run2.png',
         framesMax: 8,
     },
     jump: {
-        imageSrc: 'assets/img/samuraiMack/Jump.png',
+        imageSrc: 'assets/img/Sprites/Rengoku/Jump.png',
         framesMax: 2,
     },
     jump2: {
-        imageSrc: 'assets/img/samuraiMack/Jump2.png',
+        imageSrc: 'assets/img/Sprites/Rengoku/Jump2.png',
         framesMax: 2,
     },
     fall: {
-        imageSrc: 'assets/img/samuraiMack/Fall.png',
+        imageSrc: 'assets/img/Sprites/Rengoku/Fall.png',
         framesMax: 2,
     },
     fall2: {
-        imageSrc: 'assets/img/samuraiMack/Fall2.png',
+        imageSrc: 'assets/img/Sprites/Rengoku/Fall2.png',
         framesMax: 2,
     },
     attack1: {
-        imageSrc: 'assets/img/samuraiMack/Attack1.png',
-        framesMax: 6,
+        imageSrc: 'assets/img/Sprites/Rengoku/Attack1.png',
+        framesMax: 5,
     },
     takeHit: {
-        imageSrc: 'assets/img/samuraiMack/Take Hit - white silhouette.png',
-        framesMax: 4,
+        imageSrc: 'assets/img/Sprites/Rengoku/Take Hit.png',
+        framesMax: 2,
     },
     death: {
-        imageSrc: 'assets/img/samuraiMack/Death.png',
-        framesMax: 6,
+        imageSrc: 'assets/img/Sprites/Rengoku/Death.png',
+        framesMax: 5,
     },
 },
   // Define a distancia do ataque
 
   attackBox: {
     offset: {
-        x:100,
+        x:80,
         y:50
     },
-    width: 160,
+    width: 80,
     height: 50
     }
 })
   // Caixa do Player Dois
     const enemy = new Lutador ({
         position: {
-            x:850,
+            x:830,
             y:100
         }, 
         velocity: {
@@ -127,61 +125,61 @@ const player = new Lutador ({
 
   //Sprites do Jogador 2
 
-  imageSrc: 'assets/img/kenji/Idle.png',
-  framesMax: 4,
-  scale: 2.5,
+  imageSrc: 'assets/img/Sprites/Link/Idle.png',
+  framesMax: 6,
+  scale: 2,
   offset: {
-    x: 215,
-    y: 167
+    x: 105,
+    y: -32
   },
   sprites: {
     idle: {
-        imageSrc: 'assets/img/kenji/Idle.png',
-        framesMax: 4,
+        imageSrc: 'assets/img/Sprites/Link/Idle.png',
+        framesMax: 6,
     },
     run: {
-        imageSrc: 'assets/img/kenji/Run.png',
+        imageSrc: 'assets/img/Sprites/Link/Run.png',
         framesMax: 8,
     },
     run2: {
-        imageSrc: 'assets/img/kenji/Run2.png',
+        imageSrc: 'assets/img/Sprites/Link/Run2.png',
         framesMax: 8,
     },
     jump: {
-        imageSrc: 'assets/img/kenji/Jump.png',
+        imageSrc: 'assets/img/Sprites/Link/Jump.png',
         framesMax: 2,
     },
     jump2: {
-        imageSrc: 'assets/img/kenji/Jump2.png',
+        imageSrc: 'assets/img/Sprites/Link/Jump2.png',
         framesMax: 2,
     },
     fall: {
-        imageSrc: 'assets/img/kenji/Fall.png',
+        imageSrc: 'assets/img/Sprites/Link/Fall.png',
         framesMax: 2,
     },
     fall2: {
-        imageSrc: 'assets/img/kenji/Fall2.png',
+        imageSrc: 'assets/img/Sprites/Link/Fall2.png',
         framesMax: 2,
     },
     attack1: {
-        imageSrc: 'assets/img/kenji/Attack1.png',
-        framesMax: 4,
+        imageSrc: 'assets/img/Sprites/Link/Attack1.png',
+        framesMax: 5,
     },
     takeHit: {
-        imageSrc: 'assets/img/kenji/Take hit.png',
+        imageSrc: 'assets/img/Sprites/Link/Take hit.png',
         framesMax: 3,
     },
     death: {
-        imageSrc: 'assets/img/kenji/Death.png',
-        framesMax: 7,
+        imageSrc: 'assets/img/Sprites/Link/Death.png',
+        framesMax: 2,
     },
 },
   attackBox: {
     offset: {
-        x: -170,
+        x: -70,
         y:50
     },
-    width: 170,
+    width: 70,
     height: 50
   }
 })
@@ -217,8 +215,8 @@ function animate() {
     c.fillRect(0, 0, canvas.width, canvas.height)
     background.update()
     loja.update()
-    c.fillStyle = 'rgba(255, 255, 255, 0.15)'
-    c.fillRect(0, 0, canvas.width, canvas.height)
+    // c.fillStyle = 'rgba(255, 255, 255, 0.15)'
+    // c.fillRect(0, 0, canvas.width, canvas.height)
     player.update()
     enemy.update()
         
@@ -289,7 +287,7 @@ function animate() {
         retangulo2: enemy
       }) &&
       player.isAtacking && 
-      player.framesCurrent === 4
+      player.framesCurrent === 2
     ){
         enemy.takeHit()
         player.isAtacking = false
@@ -303,7 +301,7 @@ function animate() {
 
     // Define oque sera feito se um Jogador não atingir o outro
 
-    if (player.isAtacking && player.framesCurrent === 4 ) {
+    if (player.isAtacking && player.framesCurrent === 2 ) {
         player.isAtacking = false
         songAtackMiss2.play();
     }
