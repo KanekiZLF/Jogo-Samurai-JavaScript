@@ -94,7 +94,7 @@ const player = new Lutador ({
 
   attackBox: {
     offset: {
-        x:80,
+        x:50,
         y:50
     },
     width: 80,
