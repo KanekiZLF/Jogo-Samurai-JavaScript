@@ -45,8 +45,8 @@ const player = new Lutador ({
   framesMax: 8,
   scale: 2,
   offset: {
-    x: 20,
-    y: -23
+    x: 100,
+    y: -18
   },
   sprites: {
     idle: {
@@ -71,11 +71,11 @@ const player = new Lutador ({
     },
     fall: {
         imageSrc: 'assets/img/Sprites/Rengoku/Fall.png',
-        framesMax: 2,
+        framesMax: 3,
     },
     fall2: {
         imageSrc: 'assets/img/Sprites/Rengoku/Fall2.png',
-        framesMax: 2,
+        framesMax: 3,
     },
     attack1: {
         imageSrc: 'assets/img/Sprites/Rengoku/Attack1.png',
@@ -87,7 +87,7 @@ const player = new Lutador ({
     },
     death: {
         imageSrc: 'assets/img/Sprites/Rengoku/Death.png',
-        framesMax: 5,
+        framesMax: 3,
     },
 },
   // Define a distancia do ataque
