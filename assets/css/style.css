@@ -187,25 +187,50 @@
     margin-right: 9rem;
 }
 
-#rengoku {
-    display: flex;   
-    flex-wrap: nowrap;
-}
-
-#link {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
 #img-sprite {
-    width: 300px;
-    height: auto;
+    width: 200px;
+    height: 140px;
 }
 
 #container-sprite {
     display: flex;
     justify-content: space-between;
     background-color: #462c26;
+}
+
+#container-rengoku {
+    display: flex;
+   justify-content: space-between; 
+}
+
+#rengoku {
+    max-width: 370px;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#container-link {
+    display: flex;
+    justify-content: space-between;
+}
+
+#link {
+    max-width: 423px;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+b {
+    color: rgba(248, 39, 39, 0.897);
+}
+
+a {
+    text-decoration: none;
+    color: green;
 }
 
 /* Fim Section One */
