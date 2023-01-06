@@ -11,7 +11,7 @@ const background = new Sprite({
       x: 0,
       y: 0
     },
-    imageSrc: 'assets/img/background.png'
+    imageSrc: 'assets/img/Sprites/background.png'
   })
 
 const loja = new Sprite({
@@ -19,7 +19,7 @@ const loja = new Sprite({
       x: 600,
       y: 114,
     },
-    imageSrc: 'assets/img/shop.png',
+    imageSrc: 'assets/img/Sprites/shop.png',
     scale: 2.75,
     framesMax: 6,
   })
