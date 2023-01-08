@@ -162,7 +162,7 @@ const player = new Lutador ({
         framesMax: 5,
     },
     takeHit: {
-        imageSrc: 'assets/img/Sprites/Link/Take hit.png',
+        imageSrc: 'assets/img/Sprites/Link/Take Hit.png',
         framesMax: 3,
     },
     death: {
