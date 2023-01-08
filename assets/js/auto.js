@@ -66,12 +66,14 @@ function moveP2(){
         if (enemy.dead && player.saude >= 0){
             keys.ArrowRight.pressed = false
             keys.ArrowLeft.pressed = false
+            enemy.lastKey = 'ArrowRight'
             enemy.switchSprite('dead')
     }
         } 
         else if (player.dead){
             keys.ArrowRight.pressed = false
             keys.ArrowLeft.pressed = false
+            enemy.lastKey = 'ArrowRight'
             enemy.switchSprite('idle')
         }
         if (clickOne === false){
